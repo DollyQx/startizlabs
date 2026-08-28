@@ -1,26 +1,230 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─────────────────────────────────────────────────────────────────────────────
+   STARTIZ LABS — Design Tokens (Tailwind v4 @theme)
+   Single source of truth for colors, typography, spacing, and radius.
+   To retheme the entire site, update values here.
+───────────────────────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Fonts (variables injected by next/font in layout.tsx) */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Brand Colors */
+  --color-brand-50:  #eefbf3;
+  --color-brand-100: #d6f4e1;
+  --color-brand-200: #b0e9c5;
+  --color-brand-300: #7dd8a0;
+  --color-brand-400: #47c076;
+  --color-brand-500: #22a558;   /* Primary brand accent */
+  --color-brand-600: #178546;
+  --color-brand-700: #136939;
+  --color-brand-800: #115430;
+  --color-brand-900: #0f4528;
+
+  /* Surface / Background */
+  --color-canvas:    #050a08;   /* Page background — near-black with green tint */
+  --color-surface:   #0c1410;   /* Card / section surfaces */
+  --color-surface-2: #111d16;   /* Elevated cards */
+  --color-surface-3: #172418;   /* Borders, dividers */
+
+  /* Text */
+  --color-fg:        #f0faf3;   /* Primary text */
+  --color-fg-muted:  #8eaa97;   /* Secondary / muted text */
+  --color-fg-subtle: #4d6b57;   /* Placeholder, disabled */
+
+  /* Semantic */
+  --color-border:    #1e3026;
+  --color-ring:      #22a558;
+
+  /* Border Radius */
+  --radius-sm:   0.25rem;   /* 4px */
+  --radius-md:   0.5rem;    /* 8px */
+  --radius-lg:   0.75rem;   /* 12px */
+  --radius-xl:   1rem;      /* 16px */
+  --radius-2xl:  1.5rem;    /* 24px */
+  --radius-full: 9999px;
+
+  /* Spacing scale additions */
+  --spacing-section: 6rem;   /* 96px vertical section padding */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ─────────────────────────────────────────────────────────────────────────────
+   Base Styles
+───────────────────────────────────────────────────────────────────────────── */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-canvas);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Focus ring — keyboard-accessible, visually distinct */
+:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Selection highlight */
+::selection {
+  background-color: color-mix(in srgb, var(--color-brand-500) 30%, transparent);
+  color: var(--color-fg);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Typography Scale Utilities
+───────────────────────────────────────────────────────────────────────────── */
+
+@layer components {
+  .heading-display {
+    font-size: clamp(2.75rem, 7vw, 5.5rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+  }
+
+  .heading-1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+  }
+
+  .heading-2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-weight: 650;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+
+  .heading-3 {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.35;
+  }
+
+  .body-lg {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--color-fg-muted);
+  }
+
+  .body-base {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-fg-muted);
+  }
+
+  .label-sm {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Keyframe Animations
+───────────────────────────────────────────────────────────────────────────── */
+
+/* Gentle float — hero floating elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%  { transform: translateY(-12px) rotate(1.5deg); }
+  66%  { transform: translateY(6px) rotate(-1deg); }
+}
+
+/* Alternative float pattern */
+@keyframes float-alt {
+  0%, 100% { transform: translateY(0px) rotate(45deg); }
+  50%  { transform: translateY(-16px) rotate(48deg); }
+}
+
+/* Slow float for larger elements */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50%  { transform: translateY(-8px); }
+}
+
+/* Breathing glow pulse */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.12; transform: scale(1); }
+  50%  { opacity: 0.22; transform: scale(1.06); }
+}
+
+/* Blinking cursor for AI mockup */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%  { opacity: 0; }
+}
+
+/* Grid shift — subtle background movement */
+@keyframes grid-shift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 64px 64px; }
+}
+
+/* Fade in upward — hero staggered entrance */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Shimmer — loading / AI processing */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Animation Utility Classes
+───────────────────────────────────────────────────────────────────────────── */
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-float-alt {
+    animation: float-alt 8s ease-in-out infinite 1.5s;
+  }
+  .animate-float-slow {
+    animation: float-slow 10s ease-in-out infinite 3s;
+  }
+  .animate-pulse-glow {
+    animation: pulse-glow 5s ease-in-out infinite;
+  }
+  .animate-cursor {
+    animation: cursor-blink 1.2s step-end infinite;
+  }
+  .animate-grid {
+    animation: grid-shift 30s linear infinite;
+  }
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      color-mix(in srgb, var(--color-brand-500) 15%, transparent) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.5s ease-in-out infinite;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Scrollbar Styling (webkit)
+───────────────────────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-canvas); }
+::-webkit-scrollbar-thumb { background: var(--color-surface-3); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-fg-subtle); }
