@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { Schema, SchemaType } from "@google/generative-ai";
 
 // Zod Schema to validate incoming PlannerAnswers
 export const PlannerAnswersSchema = z.object({
@@ -78,3 +79,152 @@ export const LaunchBlueprintSchema = z.object({
     growth: z.number().int().min(0).max(100),
   }),
 });
+
+export const GeminiResponseSchema: Schema = {
+  type: SchemaType.OBJECT,
+  properties: {
+    businessIdea: {
+      type: SchemaType.OBJECT,
+      properties: {
+        refinedConcept: { type: SchemaType.STRING },
+        problem: { type: SchemaType.STRING },
+        solution: { type: SchemaType.STRING },
+        businessModel: { type: SchemaType.STRING },
+      },
+      required: ["refinedConcept", "problem", "solution", "businessModel"],
+    },
+    targetAudience: {
+      type: SchemaType.OBJECT,
+      properties: {
+        primaryCustomer: { type: SchemaType.STRING },
+        characteristics: { type: SchemaType.STRING },
+        mainPainPoints: { type: SchemaType.STRING },
+        buyingMotivation: { type: SchemaType.STRING },
+      },
+      required: ["primaryCustomer", "characteristics", "mainPainPoints", "buyingMotivation"],
+    },
+    market: {
+      type: SchemaType.OBJECT,
+      properties: {
+        marketOpportunity: { type: SchemaType.STRING },
+        competitorCategories: { type: SchemaType.STRING },
+        potentialDifferentiation: { type: SchemaType.STRING },
+        keyAssumptions: { type: SchemaType.STRING },
+      },
+      required: ["marketOpportunity", "competitorCategories", "potentialDifferentiation", "keyAssumptions"],
+    },
+    positioning: {
+      type: SchemaType.OBJECT,
+      properties: {
+        suggestedPositioning: { type: SchemaType.STRING },
+        valueProposition: { type: SchemaType.STRING },
+        usp: { type: SchemaType.STRING },
+        brandAngle: { type: SchemaType.STRING },
+      },
+      required: ["suggestedPositioning", "valueProposition", "usp", "brandAngle"],
+    },
+    brand: {
+      type: SchemaType.OBJECT,
+      properties: {
+        suggestedBrandDirection: { type: SchemaType.STRING },
+        sampleNames: {
+          type: SchemaType.ARRAY,
+          items: { type: SchemaType.STRING },
+        },
+        taglineConcepts: {
+          type: SchemaType.ARRAY,
+          items: { type: SchemaType.STRING },
+        },
+        suggestedVisualDirection: { type: SchemaType.STRING },
+      },
+      required: ["suggestedBrandDirection", "sampleNames", "taglineConcepts", "suggestedVisualDirection"],
+    },
+    productMvp: {
+      type: SchemaType.OBJECT,
+      properties: {
+        recommendedMvp: { type: SchemaType.STRING },
+        mustHaveFeatures: {
+          type: SchemaType.ARRAY,
+          items: { type: SchemaType.STRING },
+        },
+        niceToHaveFeatures: {
+          type: SchemaType.ARRAY,
+          items: { type: SchemaType.STRING },
+        },
+        suggestedFirstVersion: { type: SchemaType.STRING },
+      },
+      required: ["recommendedMvp", "mustHaveFeatures", "niceToHaveFeatures", "suggestedFirstVersion"],
+    },
+    website: {
+      type: SchemaType.OBJECT,
+      properties: {
+        recommendedWebsiteType: { type: SchemaType.STRING },
+        suggestedPages: {
+          type: SchemaType.ARRAY,
+          items: { type: SchemaType.STRING },
+        },
+        mainCta: { type: SchemaType.STRING },
+        homepageStructure: {
+          type: SchemaType.ARRAY,
+          items: { type: SchemaType.STRING },
+        },
+      },
+      required: ["recommendedWebsiteType", "suggestedPages", "mainCta", "homepageStructure"],
+    },
+    contentMarketing: {
+      type: SchemaType.OBJECT,
+      properties: {
+        contentPillars: {
+          type: SchemaType.ARRAY,
+          items: { type: SchemaType.STRING },
+        },
+        launchContentIdeas: {
+          type: SchemaType.ARRAY,
+          items: { type: SchemaType.STRING },
+        },
+        seoDirection: { type: SchemaType.STRING },
+        customerAcquisition: {
+          type: SchemaType.ARRAY,
+          items: { type: SchemaType.STRING },
+        },
+      },
+      required: ["contentPillars", "launchContentIdeas", "seoDirection", "customerAcquisition"],
+    },
+    launchRoadmap: {
+      type: SchemaType.OBJECT,
+      properties: {
+        week1: { type: SchemaType.STRING },
+        week2: { type: SchemaType.STRING },
+        week3: { type: SchemaType.STRING },
+        week4: { type: SchemaType.STRING },
+      },
+      required: ["week1", "week2", "week3", "week4"],
+    },
+    score: { type: SchemaType.INTEGER },
+    status: { type: SchemaType.STRING },
+    metrics: {
+      type: SchemaType.OBJECT,
+      properties: {
+        strategy: { type: SchemaType.INTEGER },
+        brand: { type: SchemaType.INTEGER },
+        product: { type: SchemaType.INTEGER },
+        growth: { type: SchemaType.INTEGER },
+      },
+      required: ["strategy", "brand", "product", "growth"],
+    },
+  },
+  required: [
+    "businessIdea",
+    "targetAudience",
+    "market",
+    "positioning",
+    "brand",
+    "productMvp",
+    "website",
+    "contentMarketing",
+    "launchRoadmap",
+    "score",
+    "status",
+    "metrics",
+  ],
+};
