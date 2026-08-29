@@ -20,9 +20,17 @@ const Github = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 export const metadata: Metadata = {
-  title: "Work — Selected Projects | Startiz Labs",
+  title: "Startiz Labs — Projects, Engineering & Work",
   description:
-    "Explore professional client work and engineering builds by Startiz Labs, bridging software, cybersecurity, and brand identity.",
+    "Explore the Startiz Labs portfolio of shipped codebases, branding operations, security analyzers, and client platforms. We build things that work.",
+  alternates: {
+    canonical: "/work",
+  },
+  openGraph: {
+    title: "Startiz Labs — Projects, Engineering & Work",
+    description:
+      "Explore the Startiz Labs portfolio of shipped codebases, branding operations, security analyzers, and client platforms. We build things that work.",
+  },
 };
 
 const professionalWork = [

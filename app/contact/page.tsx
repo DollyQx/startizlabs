@@ -1,26 +1,37 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/sections/SectionHeading";
+import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { Mail, MessageSquare, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact Startiz Labs — Let's Build Something",
   description:
-    "Get in touch with Startiz Labs — via WhatsApp chat or direct email enquiry.",
+    "Reach out to Startiz Labs to discuss strategy, branding, development, and launch roadmaps. Start a direct WhatsApp chat or submit an email enquiry.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Startiz Labs — Let's Build Something",
+    description:
+      "Reach out to Startiz Labs to discuss strategy, branding, development, and launch roadmaps. Start a direct WhatsApp chat or submit an email enquiry.",
+  },
 };
 
 export default function ContactPage() {
   return (
     <section className="py-24" aria-label="Contact Startiz Labs">
       <Container size="narrow">
-        <SectionHeading
-          badge="Get in Touch"
-          title="Let's talk about what you're building."
-          subtitle="Start a direct chat on WhatsApp for a fast response, or send us an email enquiry. No pressure, just a real discussion about your goals."
-          className="mb-16"
-        />
+        <div className="flex flex-col items-center text-center gap-4 mb-16">
+          <Badge variant="default">Get in Touch</Badge>
+          <h1 className="heading-2 max-w-[28ch] text-fg">
+            Let&apos;s talk about what you&apos;re building.
+          </h1>
+          <p className="body-lg mx-auto max-w-[52ch] text-fg-muted">
+            Start a direct chat on WhatsApp for a fast response, or send us an email enquiry. No pressure, just a real discussion about your goals.
+          </p>
+        </div>
 
         {/* Contact options */}
         <div className="grid gap-6 sm:grid-cols-2">
@@ -31,7 +42,7 @@ export default function ContactPage() {
             </div>
             <div className="flex-1">
               <h2 className="heading-3 mb-2 text-fg">WhatsApp Startiz</h2>
-              <p className="body-base">
+              <p className="body-base text-fg-muted">
                 Chat with our team directly. Ideal for quick questions, ideation, and rapid responses.
               </p>
             </div>
@@ -53,7 +64,7 @@ export default function ContactPage() {
             </div>
             <div className="flex-1">
               <h2 className="heading-3 mb-2 text-fg">Email Enquiry</h2>
-              <p className="body-base">
+              <p className="body-base text-fg-muted">
                 Prefer traditional email? Reach us directly and our team will get back to you in one business day.
               </p>
             </div>

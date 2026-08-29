@@ -1,7 +1,82 @@
 import Link from "next/link";
-import { Globe, Camera, Mail } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION } from "@/lib/constants";
+
+const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
+
+const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+
+const YoutubeIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z" />
+    <path d="m10 15 5-3-5-3z" />
+  </svg>
+);
+
+const MailIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <rect width="20" height="16" x="2" y="4" rx="2" />
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+  </svg>
+);
 
 type FooterLink = { label: string; href: string };
 
@@ -87,31 +162,49 @@ export function Footer() {
             </p>
 
             {/* Social links */}
-            <div className="flex items-center gap-3 pt-1">
+            <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/startiz-labs"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Startiz Labs on LinkedIn"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-fg-muted transition-colors hover:border-brand-500/30 hover:bg-surface-2 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
-                <Globe className="h-4 w-4" aria-hidden />
+                <LinkedinIcon className="h-4.5 w-4.5" aria-hidden />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/startizlabs"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Startiz Labs on Instagram"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-fg-muted transition-colors hover:border-brand-500/30 hover:bg-surface-2 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
-                <Camera className="h-4 w-4" aria-hidden />
+                <InstagramIcon className="h-4.5 w-4.5" aria-hidden />
+              </a>
+              <a
+                href="https://facebook.com/startizlabs"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Startiz Labs on Facebook"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-fg-muted transition-colors hover:border-brand-500/30 hover:bg-surface-2 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <FacebookIcon className="h-4.5 w-4.5" aria-hidden />
+              </a>
+              <a
+                href="https://youtube.com/@startizlabs"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Startiz Labs on YouTube"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-fg-muted transition-colors hover:border-brand-500/30 hover:bg-surface-2 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <YoutubeIcon className="h-4.5 w-4.5" aria-hidden />
               </a>
               <a
                 href="mailto:hello@startizlabs.com"
                 aria-label="Email Startiz Labs"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-fg-muted transition-colors hover:border-brand-500/30 hover:bg-surface-2 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
-                <Mail className="h-4 w-4" aria-hidden />
+                <MailIcon className="h-4.5 w-4.5" aria-hidden />
               </a>
             </div>
           </div>

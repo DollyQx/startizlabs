@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/sections/SectionHeading";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { Badge } from "@/components/ui/Badge";
 import { Globe, Calendar, Briefcase, ArrowRight, ShieldCheck, Cpu, Terminal, Laptop } from "lucide-react";
@@ -53,9 +52,17 @@ const Instagram = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 export const metadata: Metadata = {
-  title: "About Us | Startiz Labs",
+  title: "About Startiz Labs — The People Building It",
   description:
-    "Learn about Startiz Labs — our mission, founder Dolly Kumari, our principles, and how we merge engineering, cybersecurity, and growth.",
+    "Get to know Dolly Kumari and the philosophy behind Startiz Labs. We merge software engineering, cybersecurity, positioning, and growth design to launch startup models.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Startiz Labs — The People Building It",
+    description:
+      "Get to know Dolly Kumari and the philosophy behind Startiz Labs. We merge software engineering, cybersecurity, positioning, and growth design to launch startup models.",
+  },
 };
 
 const founderSocials = [
@@ -166,12 +173,12 @@ export default function AboutPage() {
       {/* 1. Hero & 2. Why Startiz Exists */}
       <section className="relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-20" aria-label="About Startiz Labs">
         <Container size="narrow">
-          <SectionHeading
-            badge="About Us"
-            title="We exist to make building a startup easier."
-            align="left"
-            className="mb-8"
-          />
+          <div className="flex flex-col items-start gap-4 mb-8">
+            <span className="inline-flex max-w-max items-center rounded-full bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-400 border border-brand-500/20">About Us</span>
+            <h1 className="heading-2 max-w-[32ch] text-fg">
+              We exist to make building a startup easier.
+            </h1>
+          </div>
 
           <div className="flex flex-col gap-6 text-fg-muted">
             <p className="body-lg text-fg">

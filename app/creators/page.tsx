@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/sections/SectionHeading";
+import { Badge } from "@/components/ui/Badge";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { Card, CardHeader, CardBody } from "@/components/ui/Card";
 import { Mic, Video, Layout, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Creators",
+  title: "Creators Brand Solutions — Startiz Labs",
   description:
-    "Personal branding and creator business services from Startiz Labs — built for solopreneurs and content creators.",
+    "Solopreneur and content creator business services. Build your personal brand strategy, content pipelines, search presence, and premium landing hub.",
+  alternates: {
+    canonical: "/creators",
+  },
+  openGraph: {
+    title: "Creators Brand Solutions — Startiz Labs",
+    description:
+      "Solopreneur and content creator business services. Build your personal brand strategy, content pipelines, search presence, and premium landing hub.",
+  },
 };
 
 const offerings = [
@@ -39,12 +47,15 @@ export default function CreatorsPage() {
     <>
       <section className="py-24" aria-label="Creator services">
         <Container>
-          <SectionHeading
-            badge="For Creators"
-            title="Build a brand that works for you."
-            subtitle="Whether you're a solopreneur, influencer, or expert — we help you turn your personal brand into a real business."
-            className="mb-16"
-          />
+          <div className="flex flex-col items-center text-center gap-4 mb-16">
+            <Badge variant="default">For Creators</Badge>
+            <h1 className="heading-2 max-w-[28ch] text-fg">
+              Build a brand that works for you.
+            </h1>
+            <p className="body-lg mx-auto max-w-[50ch] text-fg-muted">
+              Whether you&apos;re a solopreneur, influencer, or expert — we help you turn your personal brand into a real business.
+            </p>
+          </div>
 
           <div className="grid gap-6 sm:grid-cols-2">
             {offerings.map(({ icon: Icon, title, body }) => (
@@ -64,7 +75,7 @@ export default function CreatorsPage() {
 
       <CTABanner
         title="Your brand is your business."
-        subtitle="Let's build it the right way from day one."
+        subtitle="Let&apos;s build it the right way from day one."
         primaryLabel="Start Your Idea"
         primaryHref="/contact"
       />

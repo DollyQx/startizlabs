@@ -7,13 +7,16 @@ import { ServicesDetailGrid } from "@/components/sections/services/ServicesDetai
 import { PricingSection } from "@/components/sections/services/PricingSection";
 
 export const metadata: Metadata = {
-  title: "Services & Pricing | Startiz Labs",
+  title: "Startiz Labs Services — Strategy, Branding, Technology & Growth",
   description:
-    "Explore Startiz Labs services and launch packages for founders, creators and early-stage businesses.",
+    "Comprehensive startup launch services. Get end-to-end strategy, brand identity design, technology development, copy content, search discoverability, and growth execution.",
+  alternates: {
+    canonical: "/services",
+  },
   openGraph: {
-    title: "Services & Pricing | Startiz Labs",
+    title: "Startiz Labs Services — Strategy, Branding, Technology & Growth",
     description:
-      "Explore Startiz Labs services and launch packages for founders, creators and early-stage businesses.",
+      "Comprehensive startup launch services. Get end-to-end strategy, brand identity design, technology development, copy content, search discoverability, and growth execution.",
   },
 };
 

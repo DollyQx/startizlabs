@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/sections/SectionHeading";
+import { Badge } from "@/components/ui/Badge";
 import { CTABanner } from "@/components/sections/CTABanner";
 
 export const metadata: Metadata = {
-  title: "How It Works",
+  title: "How It Works — Startup Launch Process | Startiz Labs",
   description:
-    "Learn how Startiz Labs takes your idea from zero to launch in a clear, structured process.",
+    "Learn our structured process: Discovery, Strategy & Planning, Build, and Launch & Grow, designed to ship your business fast.",
+  alternates: {
+    canonical: "/how-it-works",
+  },
+  openGraph: {
+    title: "How It Works — Startup Launch Process | Startiz Labs",
+    description:
+      "Learn our structured process: Discovery, Strategy & Planning, Build, and Launch & Grow, designed to ship your business fast.",
+  },
 };
 
 const steps = [
@@ -37,12 +45,15 @@ export default function HowItWorksPage() {
     <>
       <section className="py-24" aria-label="How it works">
         <Container>
-          <SectionHeading
-            badge="Process"
-            title="From idea to launch — step by step."
-            subtitle="A structured, founder-friendly process built to get you to market fast without cutting corners."
-            className="mb-20"
-          />
+          <div className="flex flex-col items-center text-center gap-4 mb-20">
+            <Badge variant="default">Process</Badge>
+            <h1 className="heading-2 max-w-[28ch] text-fg">
+              From idea to launch — step by step.
+            </h1>
+            <p className="body-lg mx-auto max-w-[50ch] text-fg-muted">
+              A structured, founder-friendly process built to get you to market fast without cutting corners.
+            </p>
+          </div>
 
           <div className="relative flex flex-col gap-0">
             {/* Connecting line */}
@@ -63,7 +74,7 @@ export default function HowItWorksPage() {
 
                 <div className="pt-4">
                   <h3 className="heading-3 mb-2 text-fg">{title}</h3>
-                  <p className="body-base">{body}</p>
+                  <p className="body-base text-fg-muted">{body}</p>
                 </div>
               </div>
             ))}

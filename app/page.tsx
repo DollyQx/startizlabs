@@ -11,13 +11,18 @@ import { TrustSection }      from "@/components/sections/TrustSection";
 import { FinalCTASection }   from "@/components/sections/FinalCTASection";
 
 export const metadata: Metadata = {
-  title: "Startiz Labs — From Idea to Launch",
+  title: {
+    absolute: "Startiz Labs — From Idea to Launch",
+  },
   description:
-    "Startiz Labs helps founders, creators and early-stage businesses turn ideas into launch-ready brands through strategy, branding, technology, content and growth.",
+    "Startiz Labs is a premiere startup launch studio. We help founders, creators, and early-stage businesses navigate launch planning, strategy, branding, engineering, content, and growth.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Startiz Labs — From Idea to Launch",
     description:
-      "Startiz Labs helps founders, creators and early-stage businesses turn ideas into launch-ready brands through strategy, branding, technology, content and growth.",
+      "Startiz Labs is a premiere startup launch studio. We help founders, creators, and early-stage businesses navigate launch planning, strategy, branding, engineering, content, and growth.",
   },
 };
 
