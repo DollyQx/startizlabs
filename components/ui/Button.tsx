@@ -94,7 +94,23 @@ export function Button(props: ButtonProps) {
   );
 
   if ("href" in props && props.href !== undefined) {
-    const { href, external, disabled, ...linkRest } = props as ButtonAsLink;
+    const { href, external, disabled } = props as ButtonAsLink;
+    const linkRest = Object.fromEntries(
+      Object.entries(props).filter(
+        ([key]) =>
+          ![
+            "variant",
+            "size",
+            "className",
+            "children",
+            "leadingIcon",
+            "trailingIcon",
+            "href",
+            "external",
+            "disabled",
+          ].includes(key)
+      )
+    );
     return (
       <Link
         href={href}
