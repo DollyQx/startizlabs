@@ -170,7 +170,7 @@ export function Footer() {
                 aria-label="Startiz Labs on LinkedIn"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-fg-muted transition-colors hover:border-brand-500/30 hover:bg-surface-2 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
-                <LinkedinIcon className="h-4.5 w-4.5" aria-hidden />
+                <LinkedinIcon className="h-5 w-5" aria-hidden />
               </a>
               <a
                 href="https://instagram.com/startizlabs"
@@ -179,7 +179,7 @@ export function Footer() {
                 aria-label="Startiz Labs on Instagram"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-fg-muted transition-colors hover:border-brand-500/30 hover:bg-surface-2 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
-                <InstagramIcon className="h-4.5 w-4.5" aria-hidden />
+                <InstagramIcon className="h-5 w-5" aria-hidden />
               </a>
               <a
                 href="https://facebook.com/startizlabs"
@@ -188,7 +188,7 @@ export function Footer() {
                 aria-label="Startiz Labs on Facebook"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-fg-muted transition-colors hover:border-brand-500/30 hover:bg-surface-2 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
-                <FacebookIcon className="h-4.5 w-4.5" aria-hidden />
+                <FacebookIcon className="h-5 w-5" aria-hidden />
               </a>
               <a
                 href="https://youtube.com/@startizlabs"
@@ -197,14 +197,14 @@ export function Footer() {
                 aria-label="Startiz Labs on YouTube"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-fg-muted transition-colors hover:border-brand-500/30 hover:bg-surface-2 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
-                <YoutubeIcon className="h-4.5 w-4.5" aria-hidden />
+                <YoutubeIcon className="h-5 w-5" aria-hidden />
               </a>
               <a
                 href="mailto:hello@startizlabs.com"
                 aria-label="Email Startiz Labs"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-fg-muted transition-colors hover:border-brand-500/30 hover:bg-surface-2 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
-                <MailIcon className="h-4.5 w-4.5" aria-hidden />
+                <MailIcon className="h-5 w-5" aria-hidden />
               </a>
             </div>
           </div>
