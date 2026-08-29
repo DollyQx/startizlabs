@@ -6,6 +6,7 @@ import {
   Layers, Globe, Send, Check, X, Shield, Download, ArrowRight, Star
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { Container } from "@/components/ui/Container";
 import { LaunchBlueprint, PlannerAnswers } from "./types";
 
@@ -595,17 +596,34 @@ export function BlueprintResults({ answers, blueprint, onReset }: BlueprintResul
             </div>
 
             <div className="flex flex-row sm:flex-col gap-3 min-w-[200px] shrink-0 justify-start sm:justify-center">
-              <Button
-                onClick={() => setIsModalOpen(true)}
+              <WhatsAppButton
+                message={`Hi Startiz Labs, I just completed the AI Launch Planner.
+
+Business: ${answers.businessName || "Startiz Idea"}
+Idea: ${answers.idea ? (answers.idea.length > 100 ? answers.idea.substring(0, 100).trim() + "..." : answers.idea.trim()) : "N/A"}
+Stage: ${answers.stage || "N/A"}
+Industry: ${answers.industry || "N/A"}
+Recommended Package: LAUNCH
+
+I'd like to discuss the next steps.`}
+                label="Discuss My Blueprint on WhatsApp"
                 variant="primary"
                 size="lg"
                 className="w-full"
+                eventName="whatsapp_planner_click"
+                trailingIcon={<ArrowRight className="h-4.5 w-4.5" aria-hidden />}
+              />
+              <Button
+                onClick={() => setIsModalOpen(true)}
+                variant="outline"
+                size="lg"
+                className="w-full"
               >
-                Talk to Startiz
+                Request Custom Call
               </Button>
               <Button
                 href="/services"
-                variant="outline"
+                variant="ghost"
                 size="lg"
                 className="w-full"
               >
@@ -854,24 +872,36 @@ export function BlueprintResults({ answers, blueprint, onReset }: BlueprintResul
                 </div>
               </form>
             ) : (
-              <div className="flex flex-col items-center text-center gap-6 py-8">
+              <div className="flex flex-col items-center text-center gap-6 py-6">
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-500/10 border border-brand-500/20">
                   <Check className="h-6 w-6 text-brand-400" />
                 </div>
                 <div>
                   <h3 className="heading-3 mb-2">Consultation Requested!</h3>
-                  <p className="body-base text-fg-muted max-w-[32ch]">
+                  <p className="body-base text-fg-muted max-w-[32ch] text-sm">
                     We have received your details for <strong className="text-fg">{bizName || "your project"}</strong>. Our team will contact you via <strong className="text-brand-400">{contactMethod}</strong> within 24 hours.
                   </p>
                 </div>
-                <Button
-                  onClick={closeModal}
-                  variant="outline"
-                  size="md"
-                  className="px-8 mt-2"
-                >
-                  Close
-                </Button>
+
+                <div className="flex flex-col items-center gap-3 w-full border-t border-border/40 pt-5 mt-2">
+                  <p className="text-xs text-fg-muted font-medium">Want a faster response?</p>
+                  <WhatsAppButton
+                    message="Hi Startiz Labs, I just submitted a consultation request through your website and would like to continue the conversation on WhatsApp."
+                    label="Continue on WhatsApp"
+                    variant="primary"
+                    size="md"
+                    className="w-full justify-center"
+                    eventName="whatsapp_contact_click"
+                    trailingIcon={<ArrowRight className="h-4 w-4" aria-hidden />}
+                  />
+                  <button
+                    onClick={closeModal}
+                    type="button"
+                    className="text-xs text-fg-subtle hover:text-fg underline cursor-pointer mt-1"
+                  >
+                    Or close window
+                  </button>
+                </div>
               </div>
             )}
           </div>

@@ -6,6 +6,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import {
   NAV_LINKS,
   PRIMARY_CTA,
@@ -120,6 +121,13 @@ export function Navbar() {
 
         {/* ── Desktop CTAs ─────────────────────────────────────────── */}
         <div className="hidden lg:flex items-center gap-2.5">
+          <WhatsAppButton
+            message="Hi Startiz Labs, I'd like to know more about your services."
+            label="WhatsApp Us"
+            variant="outline"
+            size="sm"
+            eventName="whatsapp_click"
+          />
           <Button href={SECONDARY_CTA.href} variant="ghost" size="sm">
             {SECONDARY_CTA.label}
           </Button>

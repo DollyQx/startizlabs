@@ -1,12 +1,13 @@
 import { CheckCircle2, XCircle, ArrowRight, Sparkles, MessageSquare } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { cn } from "@/lib/utils";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    Types
-───────────────────────────────────────────────────────────────────────────── */
+   ───────────────────────────────────────────────────────────────────────────── */
 
 type PricingCardData = {
   name: string;
@@ -16,7 +17,7 @@ type PricingCardData = {
   deliverables: string[];
   notIncluded?: string[];
   cta: string;
-  ctaHref: string;
+  whatsappMessage: string;
   ctaVariant?: "primary" | "outline";
   note?: string;
   badge?: string;
@@ -36,8 +37,8 @@ const packages: PricingCardData[] = [
     priceLabel: "FOUNDING CLIENT PRICE",
     accent: true,
     ctaVariant: "primary",
-    cta: "Start With START",
-    ctaHref: "/contact",
+    cta: "Ask About START",
+    whatsappMessage: "Hi Startiz Labs, I'm interested in the START package (₹9,999 founding client price). I'd like to know more.",
     note: "Designed for founders who need a clear foundation before launching.",
     deliverables: [
       "Business idea clarification",
@@ -67,8 +68,8 @@ const packages: PricingCardData[] = [
     tagline: "Turn your idea into a launch-ready presence.",
     price: "Starting from ₹29,999",
     ctaVariant: "outline",
-    cta: "Build My Launch",
-    ctaHref: "/contact",
+    cta: "Discuss LAUNCH",
+    whatsappMessage: "Hi Startiz Labs, I'm interested in the LAUNCH package. I'd like to discuss my requirements.",
     deliverables: [
       "Strategy",
       "Brand identity",
@@ -88,7 +89,7 @@ const packages: PricingCardData[] = [
     featured: true,
     ctaVariant: "primary",
     cta: "Talk to Startiz",
-    ctaHref: "/contact",
+    whatsappMessage: "Hi Startiz Labs, I'm interested in LAUNCH PRO and would like to discuss a custom requirement.",
     deliverables: [
       "Business strategy",
       "Market research",
@@ -107,8 +108,8 @@ const packages: PricingCardData[] = [
     tagline: "Build a personal brand beyond followers.",
     price: "Starting from ₹19,999",
     ctaVariant: "outline",
-    cta: "Build My Creator Brand",
-    ctaHref: "/contact",
+    cta: "Discuss Creator",
+    whatsappMessage: "Hi Startiz Labs, I'm interested in the Creator package and would like to discuss my requirements.",
     deliverables: [
       "Personal brand positioning",
       "Profile optimization",
@@ -136,7 +137,7 @@ function PricingCard({
   deliverables,
   notIncluded,
   cta,
-  ctaHref,
+  whatsappMessage,
   ctaVariant = "outline",
   note,
   badge,
@@ -233,15 +234,15 @@ function PricingCard({
 
       {/* CTA */}
       <div className="mt-auto pt-6">
-        <Button
-          href={ctaHref}
+        <WhatsAppButton
+          message={whatsappMessage}
+          label={cta}
           variant={ctaVariant}
           size="md"
           className="w-full justify-center"
+          eventName="whatsapp_package_click"
           trailingIcon={<ArrowRight className="h-4 w-4" aria-hidden />}
-        >
-          {cta}
-        </Button>
+        />
 
         {note && (
           <p className="mt-3 text-center text-xs leading-relaxed text-fg-subtle">
