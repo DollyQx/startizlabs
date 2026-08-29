@@ -51,57 +51,30 @@ export function ProcessSection() {
           />
         </AnimateIn>
 
-        {/* ── Desktop: horizontal timeline ─────────────────────── */}
-        <div className="hidden lg:block" aria-label="Process steps">
-          {/* Connecting line */}
-          <div className="relative mb-0 px-8">
-            <div
-              aria-hidden
-              className="absolute inset-x-8 top-[1.75rem] h-px bg-gradient-to-r from-brand-900 via-brand-500 to-brand-400"
-            />
+        {/* Consolidated Responsive Process steps */}
+        <div className="relative mx-auto max-w-lg lg:max-w-none" aria-label="Process steps">
+          {/* Combined Connecting line */}
+          <div
+            aria-hidden
+            className="absolute bottom-8 left-7 top-8 w-px bg-gradient-to-b from-brand-900 via-brand-500 to-brand-400 lg:bottom-auto lg:left-8 lg:right-8 lg:top-[1.75rem] lg:h-px lg:w-auto lg:bg-gradient-to-r"
+          />
 
-            <div className="relative grid grid-cols-5 gap-4">
-              {steps.map(({ number, title, description }, i) => (
-                <AnimateIn key={title} delay={i * 80} className="flex flex-col items-center gap-5 text-center">
-                  {/* Node */}
-                  <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-brand-500/40 bg-canvas ring-4 ring-canvas">
-                    <span className="label-sm text-brand-400">{number}</span>
-                  </div>
-
-                  {/* Content */}
-                  <div>
-                    <h3 className="mb-2 text-sm font-semibold uppercase tracking-widest text-fg">
-                      {title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-fg-muted">
-                      {description}
-                    </p>
-                  </div>
-                </AnimateIn>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* ── Mobile/Tablet: vertical timeline ─────────────────── */}
-        <div className="lg:hidden" aria-label="Process steps">
-          <div className="relative ml-7 flex flex-col gap-0">
-            {/* Connecting line */}
-            <div
-              aria-hidden
-              className="absolute bottom-8 left-0 top-8 w-px bg-gradient-to-b from-brand-900 via-brand-500 to-brand-400"
-            />
-
+          {/* Combined steps content */}
+          <div className="relative flex flex-col gap-0 pl-7 lg:grid lg:grid-cols-5 lg:gap-4 lg:pl-0">
             {steps.map(({ number, title, description }, i) => (
-              <AnimateIn key={title} delay={i * 70} className="relative flex gap-8 pb-12 last:pb-0">
+              <AnimateIn
+                key={title}
+                delay={i * 75}
+                className="relative flex flex-row gap-8 pb-12 last:pb-0 lg:flex-col lg:items-center lg:gap-5 lg:text-center lg:pb-0"
+              >
                 {/* Node */}
-                <div className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-brand-500/40 bg-canvas ring-4 ring-canvas -ml-7">
+                <div className="relative z-10 flex h-14 w-14 shrink-0 -ml-7 items-center justify-center rounded-full border border-brand-500/40 bg-canvas ring-4 ring-canvas lg:ml-0">
                   <span className="label-sm text-brand-400">{number}</span>
                 </div>
 
                 {/* Content */}
-                <div className="pt-3">
-                  <h3 className="mb-1.5 text-sm font-semibold uppercase tracking-widest text-fg">
+                <div className="pt-3 lg:pt-0">
+                  <h3 className="mb-1.5 text-sm font-semibold uppercase tracking-widest text-fg lg:mb-2">
                     {title}
                   </h3>
                   <p className="text-sm leading-relaxed text-fg-muted">

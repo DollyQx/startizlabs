@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -18,8 +17,6 @@ const blueprintItems = [
 ];
 
 function AIMockup() {
-  const [focused, setFocused] = useState(false);
-
   return (
     <div className="relative mx-auto w-full max-w-lg">
       {/* Outer glow */}
@@ -57,16 +54,7 @@ function AIMockup() {
             </label>
             <div
               id="ai-demo-input"
-              role="textbox"
-              aria-readonly="true"
-              aria-label="Example prompt: I want to launch a sustainable clothing brand for college students"
-              className={`min-h-[72px] rounded-xl border px-4 py-3 text-sm leading-relaxed text-fg transition-colors duration-200 ${
-                focused
-                  ? "border-brand-500/50 bg-surface"
-                  : "border-border bg-surface"
-              }`}
-              onMouseEnter={() => setFocused(true)}
-              onMouseLeave={() => setFocused(false)}
+              className="min-h-[72px] rounded-xl border border-border bg-surface px-4 py-3 text-sm leading-relaxed text-fg-muted"
             >
               I want to launch a sustainable clothing brand for college students.
               <span
@@ -110,15 +98,15 @@ function AIMockup() {
 
         {/* CTA inside mockup */}
         <div className="border-t border-border px-6 py-4">
-          <button
-            type="button"
-            aria-label="Build My Launch Plan — coming soon"
-            disabled
-            className="flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-lg bg-brand-500/80 py-2.5 text-sm font-semibold text-canvas opacity-80"
+          <Button
+            href="/launch-planner"
+            variant="primary"
+            size="md"
+            className="w-full justify-center"
+            trailingIcon={<ArrowRight className="h-4 w-4" aria-hidden />}
           >
             Build My Launch Plan
-            <ArrowRight className="h-4 w-4" aria-hidden />
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -178,14 +166,12 @@ export function AISection() {
               </h2>
 
               <p className="body-lg max-w-[48ch]">
-                Tell Startiz what you&apos;re building. Our AI-powered launch planner
-                will help you understand what you need to launch, where to focus
-                first, and what to build next.
+                Tell us what you&apos;re building and get a structured launch blueprint covering strategy, audience, positioning, brand, MVP, marketing and your next steps.
               </p>
 
               <div className="flex flex-wrap gap-3">
                 <Button
-                  href="/contact"
+                  href="/launch-planner"
                   variant="primary"
                   size="lg"
                   trailingIcon={<ArrowRight className="h-4 w-4" aria-hidden />}
@@ -193,10 +179,6 @@ export function AISection() {
                   Build My Launch Plan
                 </Button>
               </div>
-
-              <p className="label-sm text-fg-subtle">
-                AI interface coming soon · Building in public
-              </p>
             </div>
           </AnimateIn>
 

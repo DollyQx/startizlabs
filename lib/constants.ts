@@ -27,13 +27,13 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const PRIMARY_CTA = {
-  label: "Start Your Idea",
-  href: "/contact",
+  label: "Build With AI",
+  href: "/launch-planner",
 };
 
 export const SECONDARY_CTA = {
-  label: "Build With AI",
-  href: "/contact",
+  label: "Explore Services",
+  href: "/services",
 };
 
 // ─────────────────────────────────────────────────────────────────────────────

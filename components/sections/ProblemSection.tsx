@@ -1,26 +1,27 @@
 import { Container } from "@/components/ui/Container";
 import { AnimateIn } from "@/components/ui/AnimateIn";
+import { Lightbulb, Palette, Code2, TrendingUp } from "lucide-react";
 
 const problems = [
   {
     label: "Great idea",
     question: "Where do I start?",
-    icon: "💡",
+    icon: Lightbulb,
   },
   {
     label: "Brand",
     question: "How should it look?",
-    icon: "🎨",
+    icon: Palette,
   },
   {
     label: "Technology",
     question: "Who will build it?",
-    icon: "⚙️",
+    icon: Code2,
   },
   {
     label: "Growth",
     question: "How do I reach customers?",
-    icon: "📈",
+    icon: TrendingUp,
   },
 ];
 
@@ -62,7 +63,7 @@ export function ProblemSection() {
           />
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {problems.map(({ label, question, icon }, i) => (
+            {problems.map(({ label, question, icon: Icon }, i) => (
               <AnimateIn key={label} delay={i * 80}>
                 <div className="group relative flex flex-col gap-4 rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:border-brand-500/30 hover:bg-surface-2">
                   {/* Step dot on the connecting line (desktop) */}
@@ -73,10 +74,10 @@ export function ProblemSection() {
 
                   {/* Icon */}
                   <div
-                    aria-hidden
-                    className="flex h-12 w-12 items-center justify-center rounded-xl bg-surface-3 text-2xl"
+                    className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/10 text-brand-400 border border-brand-500/20"
+                    aria-hidden="true"
                   >
-                    {icon}
+                    <Icon className="h-5 w-5" />
                   </div>
 
                   {/* Content */}

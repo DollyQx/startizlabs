@@ -2,7 +2,6 @@
 
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { Badge } from "@/components/ui/Badge";
 
 /* ─── Floating decorative elements ─── */
@@ -148,21 +147,21 @@ export function HeroSection() {
           style={{ animation: "fade-in-up 0.8s cubic-bezier(0.16,1,0.3,1) 0.6s both" }}
         >
           <Button
-            href="/contact"
+            href="/launch-planner"
             variant="primary"
             size="lg"
             trailingIcon={<ArrowRight className="h-4 w-4" aria-hidden />}
           >
-            Start Your Idea
+            Build Your Launch Plan
           </Button>
-          <WhatsAppButton
-            message="Hi Startiz Labs, I’m interested in discussing my business idea and launch requirements."
-            label="Talk to Startiz"
+          <Button
+            href="/services"
             variant="outline"
             size="lg"
-            eventName="whatsapp_click"
             trailingIcon={<ArrowRight className="h-4 w-4" aria-hidden />}
-          />
+          >
+            Explore Services
+          </Button>
         </div>
 
         {/* Trust line */}
