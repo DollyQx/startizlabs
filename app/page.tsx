@@ -7,6 +7,7 @@ import { AISection }         from "@/components/sections/AISection";
 import { WhoWeHelpSection }  from "@/components/sections/WhoWeHelpSection";
 import { CreatorCallout }    from "@/components/sections/CreatorCallout";
 import { WhyStartizSection } from "@/components/sections/WhyStartizSection";
+import { TrustSection }      from "@/components/sections/TrustSection";
 import { FinalCTASection }   from "@/components/sections/FinalCTASection";
 
 export const metadata: Metadata = {
@@ -46,6 +47,9 @@ export default function HomePage() {
 
       {/* 8 — Why Startiz */}
       <WhyStartizSection />
+
+      {/* 8.5 — Trust Section */}
+      <TrustSection />
 
       {/* 9 — Final CTA */}
       <FinalCTASection />
