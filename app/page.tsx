@@ -3,6 +3,7 @@ import { HeroSection }       from "@/components/sections/HeroSection";
 import { ProblemSection }    from "@/components/sections/ProblemSection";
 import { ServicesSection }   from "@/components/sections/ServicesSection";
 import { ProcessSection }    from "@/components/sections/ProcessSection";
+import { PortfolioPreview }  from "@/components/sections/PortfolioPreview";
 import { AISection }         from "@/components/sections/AISection";
 import { WhoWeHelpSection }  from "@/components/sections/WhoWeHelpSection";
 import { CreatorCallout }    from "@/components/sections/CreatorCallout";
@@ -40,6 +41,9 @@ export default function HomePage() {
 
       {/* 4 — How Startiz Works */}
       <ProcessSection />
+
+      {/* 4.5 — Portfolio Preview */}
+      <PortfolioPreview />
 
       {/* 5 — AI Feature */}
       <AISection />
