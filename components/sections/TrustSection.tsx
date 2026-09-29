@@ -31,7 +31,7 @@ export function TrustSection() {
             </h2>
 
             <p className="body-lg mx-auto max-w-[50ch] text-fg-muted">
-              Startiz Labs brings software engineering, cybersecurity, branding, AI and growth together to help early-stage businesses move from idea to execution.
+              Startiz Labs brings software engineering, secure development practices, branding, AI and growth together to help early-stage businesses move from idea to execution.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">

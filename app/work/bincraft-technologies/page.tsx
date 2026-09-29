@@ -8,21 +8,21 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Case Study: Bincraft Technologies — Startiz Labs",
   description:
-    "Explore how Bincraft Technologies combined cybersecurity engineering with an identity redesign, including logos, color systems, and brand assets.",
+    "Explore how Bincraft Technologies combined secure software engineering with an identity redesign, including logos, color systems, and brand assets.",
   alternates: {
     canonical: "/work/bincraft-technologies",
   },
   openGraph: {
     title: "Case Study: Bincraft Technologies — Startiz Labs",
     description:
-      "Explore how Bincraft Technologies combined cybersecurity engineering with an identity redesign, including logos, color systems, and brand assets.",
+      "Explore how Bincraft Technologies combined secure software engineering with an identity redesign, including logos, color systems, and brand assets.",
   },
 };
 
 export default function BincraftPage() {
   const capabilities = [
-    "Cybersecurity Engineering",
-    "Security Vulnerability Assessment",
+    "Secure Systems Engineering",
+    "Security Architecture",
     "Asset Threat Modeling",
     "Logo Architecture",
     "Brand Color System",
@@ -47,7 +47,7 @@ export default function BincraftPage() {
             <span className="text-xs font-bold uppercase tracking-widest text-brand-400">02 / COMPLETED CASE STUDY</span>
             <h1 className="heading-1 text-fg">Bincraft Technologies</h1>
             <p className="body-lg text-fg-muted max-w-[65ch]">
-              Integrating corporate asset protection, security policy audits, and professional brand identity assets under one unified design system.
+              Integrating corporate asset protection, secure coding practices, and professional brand identity assets under one unified design system.
             </p>
           </div>
         </Container>
@@ -59,7 +59,7 @@ export default function BincraftPage() {
           <div className="grid gap-6 grid-cols-2 md:grid-cols-4 text-sm">
             <div>
               <span className="block text-xs font-bold text-fg-subtle tracking-wider uppercase">ROLE</span>
-              <span className="block text-fg font-medium mt-1">Cybersecurity Engineer</span>
+              <span className="block text-fg font-medium mt-1">Security & Systems Engineer</span>
             </div>
             <div>
               <span className="block text-xs font-bold text-fg-subtle tracking-wider uppercase">PERIOD</span>
@@ -67,7 +67,7 @@ export default function BincraftPage() {
             </div>
             <div>
               <span className="block text-xs font-bold text-fg-subtle tracking-wider uppercase">DELIVERABLES</span>
-              <span className="block text-fg font-medium mt-1">Cybersecurity Guarding, Logo Design, Color System</span>
+              <span className="block text-fg font-medium mt-1">Secure Architecture, Logo Design, Color System</span>
             </div>
             <div>
               <span className="block text-xs font-bold text-fg-subtle tracking-wider uppercase">CLIENT</span>
@@ -100,7 +100,7 @@ export default function BincraftPage() {
                   <li className="flex gap-3 items-start">
                     <ShieldCheck className="h-5 w-5 text-brand-400 shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-fg">Cybersecurity Operations:</strong> Performed risk assessment scans, classified access controls, and checked software libraries to establish robust baseline defenses.
+                      <strong className="text-fg">Security Operations:</strong> Performed risk assessment scans, classified access controls, and checked software libraries to establish robust baseline defenses.
                     </div>
                   </li>
                   <li className="flex gap-3 items-start">
@@ -256,7 +256,7 @@ export default function BincraftPage() {
           <div className="max-w-2xl mx-auto flex flex-col items-center gap-6">
             <h3 className="heading-2 text-fg">Have something similar in mind?</h3>
             <p className="body-base text-fg-muted">
-              We specialize in bridging sound safety practices, threat controls, logos, and digital system identities. Let&apos;s build yours.
+              We specialize in building secure web applications, custom software, and digital system identities. Let&apos;s build yours.
             </p>
             <Button href="/contact" variant="primary" size="md">
               Talk to Startiz

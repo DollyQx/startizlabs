@@ -98,7 +98,6 @@ const packages: PricingCardData[] = [
       "SEO foundation",
       "Content system",
       "Digital marketing setup",
-      "Lead generation setup",
       "AI / automation opportunities",
       "Launch support",
     ],

@@ -21,8 +21,8 @@ export function PortfolioPreview() {
     {
       title: "Bincraft Technologies",
       label: "PROFESSIONAL EXPERIENCE",
-      category: "Cybersecurity · Brand Identity",
-      description: "Worked in cybersecurity while also contributing to Bincraft Technologies' visual identity and brand foundation.",
+      category: "Security Engineering · Brand Identity",
+      description: "Worked in security engineering while also contributing to Bincraft Technologies' visual identity and brand foundation.",
       ctaLabel: "View Case Study",
       ctaHref: "/work/bincraft-technologies",
       icon: Shield,

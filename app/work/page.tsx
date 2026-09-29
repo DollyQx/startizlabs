@@ -24,14 +24,14 @@ const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
 export const metadata: Metadata = {
   title: "Work & Portfolio — Startiz Labs",
   description:
-    "Explore things we've actually built. From professional client case studies to independent engineering projects and security tooling.",
+    "Explore things we've actually built. From professional client case studies to independent engineering projects and developer tooling.",
   alternates: {
     canonical: "/work",
   },
   openGraph: {
     title: "Work & Portfolio — Startiz Labs",
     description:
-      "Explore things we've actually built. From professional client case studies to independent engineering projects and security tooling.",
+      "Explore things we've actually built. From professional client case studies to independent engineering projects and developer tooling.",
   },
 };
 
@@ -57,10 +57,10 @@ const professionalWork = [
   {
     name: "BINCRAFT TECHNOLOGIES",
     path: "/work/bincraft-technologies",
-    category: "Professional Experience · Cybersecurity · Brand Identity",
-    description: "Cybersecurity engineering combined with the creation of the company's visual foundation and color identity systems.",
+    category: "Professional Experience · Security Engineering · Brand Identity",
+    description: "Security engineering combined with the creation of the company's visual foundation and color identity systems.",
     capabilities: [
-      "Cybersecurity",
+      "Security Engineering",
       "Logo",
       "Color system",
       "Branding",
@@ -97,7 +97,7 @@ const engineeringProjects = [
   },
   {
     name: "Security Log Analyzer",
-    category: "Cybersecurity · Security Tooling",
+    category: "Developer Tooling · Security Research",
     description: "A SIEM-style dashboard (SentinelX) that detects brute force login activity (exceeding 5 failures in 1 minute) and suspicious IPs from server log files.",
     capabilities: ["Python", "FastAPI", "MongoDB", "Motor", "Chart.js", "Tailwind CSS"],
     link: "https://github.com/DollyQx/security-log-analyzer",
@@ -138,7 +138,7 @@ export default function WorkPage() {
               Things we&apos;ve actually built.
             </h1>
             <p className="body-lg max-w-[50ch] text-fg-muted">
-              From production software and digital brands to cybersecurity projects and independent engineering builds.
+              From production software and digital brands to developer tools and independent engineering builds.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 mt-2">
               <Button href="/contact" variant="primary" size="md">

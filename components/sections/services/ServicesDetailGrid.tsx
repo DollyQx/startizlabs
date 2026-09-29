@@ -88,7 +88,6 @@ const services: Service[] = [
       "Local SEO",
       "Social media marketing",
       "Digital marketing strategy",
-      "Lead generation",
     ],
   },
   {
@@ -100,7 +99,6 @@ const services: Service[] = [
     deliverables: [
       "AI chatbot integration",
       "AI content workflows",
-      "Lead qualification",
       "CRM automation",
       "Email automation",
       "WhatsApp workflows",

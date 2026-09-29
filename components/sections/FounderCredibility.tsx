@@ -36,9 +36,9 @@ export function FounderCredibility() {
     },
     {
       company: "Bincraft Technologies",
-      role: "Cybersecurity Engineer",
+      role: "Security & Systems Engineer",
       period: "10 April 2023 – June 2024",
-      details: "Worked in cybersecurity while contributing to Bincraft Technologies' visual identity, logo, color system, and brand foundations."
+      details: "Worked in security engineering while contributing to Bincraft Technologies' visual identity, logo, color system, and brand foundations."
     }
   ];
 
@@ -90,7 +90,7 @@ export function FounderCredibility() {
               <span className="text-xs font-bold uppercase tracking-widest text-brand-400">FOUNDER</span>
               <h2 id="founder-credibility-heading" className="heading-2 mt-1 text-fg">Dolly Kumari</h2>
               <p className="text-sm font-semibold tracking-wide text-fg-subtle mt-1">
-                Software Engineer · Cybersecurity · Product Builder
+                Software Engineer · Security Engineering · Product Builder
               </p>
             </div>
 

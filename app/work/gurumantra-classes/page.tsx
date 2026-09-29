@@ -218,7 +218,7 @@ export default function GuruMantraPage() {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold uppercase text-fg">Bincraft Technologies</h4>
-                  <span className="text-[10px] text-fg-subtle">Cybersecurity & Brand Identity</span>
+                  <span className="text-[10px] text-fg-subtle">Security Engineering & Brand Identity</span>
                 </div>
               </div>
               <ArrowRight className="h-4 w-4 text-fg-subtle transition-transform group-hover:translate-x-1" />
