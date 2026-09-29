@@ -8,14 +8,14 @@ import { FounderCredibility } from "@/components/sections/FounderCredibility";
 export const metadata: Metadata = {
   title: "About Startiz Labs — The People Building It",
   description:
-    "Get to know Dolly Kumari and the philosophy behind Startiz Labs. We merge software engineering, cybersecurity, positioning, and growth design to launch startup models.",
+    "Get to know Dolly Kumari and the philosophy behind Startiz Labs. We merge software engineering, secure development practices, positioning, and growth design to launch startup models.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
     title: "About Startiz Labs — The People Building It",
     description:
-      "Get to know Dolly Kumari and the philosophy behind Startiz Labs. We merge software engineering, cybersecurity, positioning, and growth design to launch startup models.",
+      "Get to know Dolly Kumari and the philosophy behind Startiz Labs. We merge software engineering, secure development practices, positioning, and growth design to launch startup models.",
   },
 };
 
@@ -54,9 +54,9 @@ const selectedWork = [
   },
   {
     name: "BINCRAFT TECHNOLOGIES",
-    category: "Professional Experience · Cybersecurity",
-    description: "Cybersecurity engineering combined with the creation of the company's visual foundation.",
-    capabilities: ["Cybersecurity", "Logo", "Color system", "Branding", "Visual identity"],
+    category: "Professional Experience · Security & Systems",
+    description: "Security engineering combined with the creation of the company's visual foundation.",
+    capabilities: ["Security Engineering", "Logo", "Color system", "Branding", "Visual identity"],
     status: "Professional Work"
   }
 ];
@@ -202,7 +202,7 @@ export default function AboutPage() {
             <span className="text-xs font-bold uppercase tracking-widest text-brand-400">Research & Ecosystems</span>
             <h2 id="sec-heading" className="heading-2 mt-2 text-fg">Security & Innovation</h2>
             <p className="body-base mt-2 text-fg-muted max-w-[50ch]">
-              Vulnerability assessment registries, technical developer hackathons and initiatives.
+              Security research, technical developer hackathons and initiatives.
             </p>
           </div>
 
