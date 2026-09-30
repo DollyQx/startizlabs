@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Startiz Labs Agency Platform
 
-## Getting Started
+Startiz Labs is a modern digital agency platform built with Next.js 16 (App Router), React 19, TailwindCSS 4, and TypeScript. It showcases case studies, service offerings, client portfolio projects, and includes an AI-powered Launch Planner.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Modern Agency Architecture**: Fully responsive, high-contrast dark theme with animated components and glassmorphism.
+- **AI Launch Planner**: Server-side endpoint (`/api/launch-planner`) powered by `@google/generative-ai` to generate custom project roadmaps.
+- **Case Studies Showcase**: Detailed interactive case studies for clients including GuruMantra Classes, Bincraft Technologies, and Zomoggy.
+- **SEO & Metadata**: Built-in canonical tags, OpenGraph metadata, `sitemap.xml`, and `robots.txt`.
+
+## Technology Stack
+
+- **Framework**: Next.js 16 (App Router with Turbopack) & React 19
+- **Language**: TypeScript 5
+- **Styling**: TailwindCSS 4 & PostCSS
+- **Icons & UI**: Lucide Icons, clsx, tailwind-merge
+- **AI**: `@google/generative-ai` (Gemini SDK)
+
+## Environment Variables
+
+Create a `.env.local` file:
+
+```env
+GEMINI_API_KEY="your_google_gemini_api_key"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Install dependencies
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Run development server
+npm run dev
 
-## Learn More
+# Run ESLint check
+npm run lint
 
-To learn more about Next.js, take a look at the following resources:
+# Build production bundle
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Security & Contributions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Please refer to [SECURITY.md](SECURITY.md) for vulnerability disclosure procedures.

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { ArrowLeft, ArrowRight, Laptop, Shield, Layers, Layout, Search, Globe } from "lucide-react";
+import { ArrowLeft, ArrowRight, Laptop, Shield, Layout, Search, Globe } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
